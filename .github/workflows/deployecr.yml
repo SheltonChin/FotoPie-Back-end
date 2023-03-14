@@ -35,6 +35,24 @@ jobs:
         ECR_REGISTRY: ${{ steps.login-ecr.outputs.registry }}
         ECR_REPOSITORY: gogogo
         IMAGE_TAG: latest
+        JWT_ACTIVIATE_SECRET_KEY : ${{ secrets.JWT_ACTIVIATE_SECRET_KEY }}
+        SERVER_PORT: ${{ secrets.SERVER_PORT }}
+        MONGO_URL: ${{ secrets.MONGO_URL }}
+        EMAIL_CONFIRMATION_URL: ${{ secrets.EMAIL_CONFIRMATION_URL }}
+        SALT: ${{ secrets.SALT }}
+        DOMAIN: ${{ secrets.DOMAIN }}
+        MAILGUN_APIKEY: ${{ secrets.MAILGUN_APIKEY }}
+        EXPIRE: ${{ secrets.EXPIRE }}
+        EMAIL_SEND: ${{ secrets.EMAIL_SEND }}
+        ACCESS_TOKEN_SECRET_PRIVATE: ${{ secrets.ACCESS_TOKEN_SECRET_PRIVATE }}
+        ACCESS_TOKEN_SECRET_PUBLIC: ${{ secrets.ACCESS_TOKEN_SECRET_PUBLIC }}
+        REFRESH_TOKEN_SECRET_PRIVATE: ${{ secrets.REFRESH_TOKEN_SECRET_PRIVATE }}
+        REFRESH_TOKEN_SECRET_PUBLIC: ${{ secrets.REFRESH_TOKEN_SECRET_PUBLIC }}
+        JWT_SECRET_KEY: ${{ secrets.JWT_SECRET_KEY }}
+        SENDER_EMAIL: ${{ secrets.SENDER_EMAIL }}
+        SENDER_EMAIL_PASSWORD: ${{ secrets.SENDER_EMAIL_PASSWORD }}
+        MAILGUN_API_KEY: ${{ secrets.MAILGUN_API_KEY }}
+        MAILGUN_DOMAIN: ${{ secrets.MAILGUN_DOMAIN }}
       run: |
         docker build -t $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG .
         docker push $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG
