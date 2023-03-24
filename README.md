@@ -19,7 +19,7 @@ After running the sample, you can stop the Docker container with
 
 `docker-compose down`
 
-### Run the sample
+### Run the samples
 
 Then, run Nest as usual:
 
